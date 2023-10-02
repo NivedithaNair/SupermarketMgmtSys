@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS Supermarket;
+USE Supermarket;
+
+CREATE TABLE IF NOT EXISTS inventory (
+    PCode VARCHAR(10) PRIMARY KEY,
+    PName VARCHAR(50),
+    Quantity FLOAT,
+    Price FLOAT,
+    Discount_percent FLOAT,
+    HSN_Code VARCHAR(10)
+);
+
+CREATE TABLE IF NOT EXISTS HSN_Code_List (
+    HSN_Code VARCHAR(10) PRIMARY KEY,
+    Tax_Percent FLOAT
+);
+INSERT INTO inventory (PCode, PName, Quantity, Price, Discount_percent, HSN_Code) VALUES
+    ('PROD100', 'Shampoo', 50, 5.99, 5.00, 'HSN1'),
+    ('PROD101', 'Soap', 75, 2.49, 2.50, 'HSN2'),
+    ('PROD102', 'Toothbrush', 60, 1.99, 0.00, 'HSN3'),
+    ('PROD103', 'Toothpaste', 80, 3.99, 10.00, 'HSN4'),
+    ('PROD104', 'Dish Soap', 40, 1.79, 3.00, 'HSN5'),
+    ('PROD105', 'Laundry Detergent', 30, 8.49, 5.00, 'HSN1'),
+    ('PROD106', 'Broom', 25, 12.99, 0.00, 'HSN6'),
+    ('PROD107', 'Mop', 20, 10.99, 0.00, 'HSN6'),
+    ('PROD108', 'Trash Bags', 35, 4.99, 0.00, 'HSN7'),
+    ('PROD109', 'Hand Soap', 45, 1.29, 2.00, 'HSN2'),
+    ('PROD110', 'Sponge', 55, 0.99, 0.00, 'HSN8'),
+    ('PROD111', 'Towel', 70, 6.99, 0.00, 'HSN9'),
+    ('PROD112', 'Dishwasher Detergent', 50, 7.49, 5.00, 'HSN1'),
+    ('PROD113', 'Cleaning Spray', 65, 3.29, 0.00, 'HSN10'),
+    ('PROD114', 'Trash Can', 15, 14.99, 0.00, 'HSN11'),
+    ('PROD115', 'Paper Towels', 85, 2.79, 0.00, 'HSN9'),
+    ('PROD116', 'Garbage Disposal', 10, 45.99, 10.00, 'HSN12'),
+    ('PROD117', 'Light Bulbs', 55, 1.89, 0.00, 'HSN13'),
+    ('PROD118', 'Batteries', 40, 4.49, 2.50, 'HSN14'),
+    ('PROD119', 'Candles', 30, 3.99, 0.00, 'HSN15');
